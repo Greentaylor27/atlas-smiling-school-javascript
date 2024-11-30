@@ -10,6 +10,10 @@ These group of web pages were coded from scratch with the help of the Boostrap F
 
 The designs were planned for Desktop, Tablet, and Mobile.
 
+# Pages Hosting
+
+[Click here](https://greentaylor27.github.io/atlas-smiling-school-javascript/homepage.html)
+
 # Homepage
 
 | **Desktop (Width: 1440 px)**                              | **Tablet (Width: 768 px)**                              | **Mobile (Width: 576 px)**                              |
