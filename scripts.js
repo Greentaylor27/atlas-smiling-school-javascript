@@ -30,12 +30,7 @@ $(document).ready(function() {
                 for (let i = 0; i < 12; i++) {
                     const data = video[i % video.length];
 
-                    $(`.popularVideo${i + 1},
-                        .cardTitle${i + 1},
-                        .subTitle${i + 1},
-                        .cardAuthor${i + 1},
-                        .videoDuration${i + 1},
-                        .profile_Pic${i + 1}`).empty();
+                    $(`.popularVideo${i + 1}, .cardTitle${i + 1}, .subTitle${i + 1}, .cardAuthor${i + 1}, .videoDuration${i + 1}, .profile_Pic${i + 1}`).empty();
 
                     $(`.popularVideo${i + 1}`).attr('src', data.thumb_url);
                     $(`.cardTitle${i + 1}`).append(data.title);
@@ -55,12 +50,7 @@ $(document).ready(function() {
                 for (let i = 0; i < 12; i++) {
                     const video = data[i % data.length];
 
-                    $(`.latestVideo${i + 1},
-                        .latestTitle${i + 1},
-                        .latestSub${i + 1},
-                        .latestAuthor${i + 1},
-                        .latestDuration${i + 1},
-                        .latestProfile${i + 1}`).empty();
+                    $(`.latestVideo${i + 1}, .latestTitle${i + 1}, .latestSub${i + 1}, .latestAuthor${i + 1}, .latestDuration${i + 1}, .latestProfile${i + 1}`).empty();
 
                     $(`.latestVideo${i + 1}`).attr('src', video.thumb_url);
                     $(`.latestTitle${i + 1}`).append(video.title);
