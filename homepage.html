@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <script src="scripts.js"></script>
   </head>
-  <body class="body">
+  <body class="body" data-page="page1">
     <header class="header">
       <div class="container">
         <nav class="navbar navbar-expand-sm navbar-dark pt-4 px-0">
@@ -132,19 +132,19 @@
                   <div class="col-12 col-sm-2 col-lg-2 offset-lg-1 text-center">
                     <img
                       src="images/profile_5.jpg"
-                      class="d-block align-self-center"
+                      class="d-block align-self-center profilePic1"
                       alt="Carousel Pic 1"
                     />
                   </div>
                   <div class="col-12 col-sm-7 offset-sm-2 col-lg-9 offset-lg-0">
                     <div class="quote-text">
-                      <p class="text-white">
+                      <p class="text-white singleQuote1">
                         « Those tutorials are concise and go straight to the
                         point. I can’t think of a better place to learn smiling.
                         And it’s so fun!
                       </p>
-                      <h4 class="text-white font-weight-bold">Person Name</h4>
-                      <span class="text-white">weather presenter</span>
+                      <h4 class="text-white font-weight-bold carousel-name1">Person Name</h4>
+                      <span class="text-white singleTitle1">weather presenter</span>
                     </div>
                   </div>
                 </div>
@@ -154,19 +154,19 @@
                   <div class="col-12 col-sm-2 col-lg-2 offset-lg-1 text-center">
                     <img
                       src="images/profile_5.jpg"
-                      class="d-block align-self-center"
+                      class="d-block align-self-center profilePic2"
                       alt="Carousel Pic 1"
                     />
                   </div>
                   <div class="col-12 col-sm-7 offset-sm-2 col-lg-9 offset-lg-0">
-                    <div class="quote-text">
-                      <p class="text-white">
+                    <div class="quote-text carousel-quote">
+                      <p class="text-white singleQuote2">
                         « Those tutorials are concise and go straight to the
                         point. I can’t think of a better place to learn smiling.
                         And it’s so fun!
                       </p>
-                      <h4 class="text-white font-weight-bold">Person Name</h4>
-                      <span class="text-white">weather presenter</span>
+                      <h4 class="text-white font-weight-bold carousel-name2">Person Name</h4>
+                      <span class="text-white carousel-title singleTitle2">weather presenter</span>
                     </div>
                   </div>
                 </div>
@@ -176,19 +176,19 @@
                   <div class="col-12 col-sm-2 col-lg-2 offset-lg-1 text-center">
                     <img
                       src="images/profile_5.jpg"
-                      class="d-block align-self-center"
+                      class="d-block align-self-center single-item-1 profilePic3"
                       alt="Carousel Pic 1"
                     />
                   </div>
                   <div class="col-12 col-sm-7 offset-sm-2 col-lg-9 offset-lg-0">
-                    <div class="quote-text">
-                      <p class="text-white">
+                    <div class="quote-text carousel-quote">
+                      <p class="text-white singleQuote3">
                         « Those tutorials are concise and go straight to the
                         point. I can’t think of a better place to learn smiling.
                         And it’s so fun!
                       </p>
-                      <h4 class="text-white font-weight-bold">Person Name</h4>
-                      <span class="text-white">weather presenter</span>
+                      <h4 class="text-white font-weight-bold carousel-name3">Person Name</h4>
+                      <span class="text-white singleTitle3">weather presenter</span>
                     </div>
                   </div>
                 </div>
@@ -199,6 +199,7 @@
               href="#carouselExampleControls"
               role="button"
               data-slide="prev"
+              onclick="showLoader();"
             >
               <img
                 src="images/arrow_white_left.png"
@@ -212,6 +213,7 @@
               href="#carouselExampleControls"
               role="button"
               data-slide="next"
+              onclick="showLoader();"
             >
               <img
                 src="images/arrow_white_right.png"
@@ -220,6 +222,7 @@
               />
               <span class="sr-only">Next</span>
             </a>
+            <!-- <div class="loader"></div> -->
           </div>
         </div>
       </section>
@@ -245,7 +248,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_4.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo1"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -257,10 +260,10 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
+                        <h5 class="card-title font-weight-bold cardTitle1">
                           Diagonal Smile
                         </h5>
-                        <p class="card-text text-muted">
+                        <p class="card-text text-muted subTitle1">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -270,9 +273,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic1"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor1">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -302,7 +305,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration1">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -313,7 +316,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_3.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo2"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -325,8 +328,8 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Sad Smile</h5>
-                        <p class="card-text text-muted">
+                        <h5 class="card-title font-weight-bold cardTitle2">Sad Smile</h5>
+                        <p class="card-text text-muted subTitle2">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -336,9 +339,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic2"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor2">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -368,7 +371,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration2">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -377,7 +380,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_1.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo3"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -389,10 +392,10 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
+                        <h5 class="card-title font-weight-bold cardTitle3">
                           Natural Smile
                         </h5>
-                        <p class="card-text text-muted">
+                        <p class="card-text text-muted subTitle3">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -402,9 +405,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic3"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor3">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -434,7 +437,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration3">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -443,7 +446,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_2.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo4"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -455,8 +458,8 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Happy Smile</h5>
-                        <p class="card-text text-muted">
+                        <h5 class="card-title font-weight-bold cardTitle4">Happy Smile</h5>
+                        <p class="card-text text-muted subTitle4">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -466,9 +469,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic4"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor4">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -498,7 +501,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration4">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -513,7 +516,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_4.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo5"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -525,10 +528,10 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
+                        <h5 class="card-title font-weight-bold cardTitle5">
                           Diagonal Smile
                         </h5>
-                        <p class="card-text text-muted">
+                        <p class="card-text text-muted subTitle5">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -538,9 +541,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic5"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor5">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -570,7 +573,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration5">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -581,7 +584,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_3.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo6"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -593,8 +596,8 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Sad Smile</h5>
-                        <p class="card-text text-muted">
+                        <h5 class="card-title font-weight-bold cardTitle6">Sad Smile</h5>
+                        <p class="card-text text-muted subTitle6">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -604,9 +607,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic6"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor6">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -636,7 +639,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration6">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -645,7 +648,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_1.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo7"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -657,10 +660,10 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
+                        <h5 class="card-title font-weight-bold cardTitle7">
                           Natural Smile
                         </h5>
-                        <p class="card-text text-muted">
+                        <p class="card-text text-muted subTitle7">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -670,9 +673,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic7"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor7">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -702,7 +705,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration7">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -711,7 +714,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_2.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo8"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -723,8 +726,8 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Happy Smile</h5>
-                        <p class="card-text text-muted">
+                        <h5 class="card-title font-weight-bold cardTitle8">Happy Smile</h5>
+                        <p class="card-text text-muted subTitle8">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -734,9 +737,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic8"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor8">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -766,7 +769,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration8">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -781,7 +784,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_4.jpg"
-                        class="card-img-top"
+                        class="card-img-top  popularVideo9"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -793,10 +796,10 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
+                        <h5 class="card-title font-weight-bold cardTitle9">
                           Diagonal Smile
                         </h5>
-                        <p class="card-text text-muted">
+                        <p class="card-text text-muted subTitle9">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -806,9 +809,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic9"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor9">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -838,7 +841,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration9">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -849,7 +852,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_3.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo10"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -861,8 +864,8 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Sad Smile</h5>
-                        <p class="card-text text-muted">
+                        <h5 class="card-title font-weight-bold cardTitle10">Sad Smile</h5>
+                        <p class="card-text text-muted subTitle10">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -872,9 +875,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic10"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor10">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -904,7 +907,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration10">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -913,7 +916,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_1.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo11"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -925,10 +928,10 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">
+                        <h5 class="card-title font-weight-bold cardTitle11">
                           Natural Smile
                         </h5>
-                        <p class="card-text text-muted">
+                        <p class="card-text text-muted subTitle11">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -938,9 +941,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic11"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor11">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -970,7 +973,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration11">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -979,7 +982,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_2.jpg"
-                        class="card-img-top"
+                        class="card-img-top popularVideo12"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
@@ -991,8 +994,8 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Happy Smile</h5>
-                        <p class="card-text text-muted">
+                        <h5 class="card-title font-weight-bold cardTitle12">Happy Smile</h5>
+                        <p class="card-text text-muted subTitle12">
                           Lorem ipsum dolor sit amet, consect adipiscing elit,
                           sed do eiusmod.
                         </p>
@@ -1002,9 +1005,9 @@
                             alt="Creator of
                             Video"
                             width="30px"
-                            class="rounded-circle"
+                            class="rounded-circle profile_Pic12"
                           />
-                          <h6 class="pl-3 m-0 main-color">Phillip Massey</h6>
+                          <h6 class="pl-3 m-0 main-color cardAuthor12">Phillip Massey</h6>
                         </div>
                         <div class="info pt-3 d-flex justify-content-between">
                           <div class="rating">
@@ -1034,7 +1037,7 @@
                               width="15px"
                             />
                           </div>
-                          <span class="main-color">8 min</span>
+                          <span class="main-color videoDuration12">8 min</span>
                         </div>
                       </div>
                     </div>
@@ -1154,7 +1157,7 @@
                     <div class="card">
                       <img
                         src="images/thumbnail_4.jpg"
-                        class="card-img-top"
+                        class="card-img-top latestVideo1"
                         alt="Video thumbnail"
                       />
                       <div class="card-img-overlay text-center">
