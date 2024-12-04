@@ -1,94 +1,219 @@
-
 $(document).ready(function() {
     let page = $('body').data('page');
 
     if (page === 'page1') {
 
-    $.ajax ({
-        url: 'https://smileschool-api.hbtn.info/quotes',
-        type: 'GET',
-        success: (data) => {
-                    
-            for (let i = 0; i < 3; i++) {
-                const quote = data[i] || data[0];
-    
-                $(`.carousel-name${i + 1}, .singleQuote${i + 1}, .singleTitle${i + 1}`).empty();
-    
-                $(`.profilePic${i + 1}`).attr('src', quote.pic_url);
-                $(`.carousel-name${i + 1}`).append(quote.name);
-                $(`.singleQuote${i + 1}`).append(quote.text);
-                $(`.singleTitle${i + 1}`).append(quote.title);
-            }
+        function getQuotes() {
+            $('#quotesLoader').show();
+            $('#quotesCarousel').hide();
+            
+            setTimeout(() => {
+                $.ajax ({
+                    url: 'https://smileschool-api.hbtn.info/quotes',
+                    type: 'GET',
+                    success: (data) => {
+                        
+                        $('#quotesLoader').hide();
+                        $('#quotesCarousel').show();
+                        
+                        for (let i = 0; i < 3; i++) {
+                            const element = data[i] || data[0];
+                            
+                            $(`.carousel-name${i + 1}, .singleQuote${i + 1}, .singleTitle${i + 1}`).empty();
+                            
+                            $(`.profilePic${i + 1}`).attr('src', element.pic_url);
+                            $(`.carousel-name${i + 1}`).append(element.name);
+                            $(`.singleQuote${i + 1}`).append(element.text);
+                            $(`.singleTitle${i + 1}`).append(element.title);
+                        }
+                    },
+                    error: function() {
+                        getQuotes();
+                    }
+                });
+            }, 1000);
         }
-    });
 
-        $.ajax({
-            url: 'https://smileschool-api.hbtn.info/popular-tutorials',
-            type: 'GET',
-            success: (video) => {
+        function getPopularVideo() {
+            $('#popularLoader').show();
+            $('#popularCarousel').hide();
 
-                for (let i = 0; i < 12; i++) {
-                    const data = video[i % video.length];
+            setTimeout(() => {
+                $.ajax ({
+                    url: 'https://smileschool-api.hbtn.info/popular-tutorials',
+                    type: 'GET',
+                    success: (data) => {
+                        $('#popularLoader').hide();
+                        $('#popularCarousel').show();
 
-                    $(`.popularVideo${i + 1}, .cardTitle${i + 1}, .subTitle${i + 1}, .cardAuthor${i + 1}, .videoDuration${i + 1}, .profile_Pic${i + 1}`).empty();
 
-                    $(`.popularVideo${i + 1}`).attr('src', data.thumb_url);
-                    $(`.cardTitle${i + 1}`).append(data.title);
-                    $(`.cardAuthor${i + 1}`).append(data.author);
-                    $(`.videoDuration${i + 1}`).append(data.duration);
-                    $(`.profile_Pic${i + 1}`).attr('src', data.author_pic_url);
-                    $(`.subTitle${i + 1}`).append(data['sub-title']);
-                
-                }
-            }
-        });
+                        for (let i = 0; i < 12; i++) {
+                            const element = data[i % data.length];
+                            const stars = element.star;
 
-        $.ajax({
-            url: 'https://smileschool-api.hbtn.info/latest-videos',
-            type: 'GET',
-            success: (data) => {
-                for (let i = 0; i < 12; i++) {
-                    const video = data[i % data.length];
+                            $(`.popularVideo${i + 1}, .cardTitle${i + 1}, .subTitle${i + 1}, .cardAuthor${i + 1}, .videoDuration${i + 1}, .profile_Pic${i + 1}`).empty();
 
-                    $(`.latestVideo${i + 1}, .latestTitle${i + 1}, .latestSub${i + 1}, .latestAuthor${i + 1}, .latestDuration${i + 1}, .latestProfile${i + 1}`).empty();
+                            $(`.popularVideo${i + 1}`).attr('src', element.thumb_url);
+                            $(`.cardTitle${i + 1}`).append(element.title);
+                            $(`.cardAuthor${i + 1}`).append(element.author);
+                            $(`.videoDuration${i + 1}`).append(element.duration);
+                            $(`.profile_Pic${i + 1}`).attr('src', element.author_pic_url);
+                            $(`.subTitle${i + 1}`).append(element['sub-title']);
 
-                    $(`.latestVideo${i + 1}`).attr('src', video.thumb_url);
-                    $(`.latestTitle${i + 1}`).append(video.title);
-                    $(`.latestAuthor${i + 1}`).append(video.author);
-                    $(`.latestDuration${i + 1}`).append(video.duration);
-                    $(`.latestProfile${i + 1}`).attr('src', video.author_pic_url);
-                    $(`.latestSub${i + 1}`).append(video['sub-title']);
-                
-                }
-            }
-        })
 
-        function showLoader(event) {
+                            /* There is probably a better way to dynamically set stars but this works and doesn't break the page.
+                            Tried using a for loop and it broke the page. */
+                            switch (stars) {
+                                case 1:
+                                    $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    break
+                                case 2:
+                                    $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    break
+                                case 3:
+                                    $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
+                                    break
+                                case 4:
+                                    $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
+                                    break
+                                case 5:
+                                    $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:nth-child(5)`).attr('src', 'images/star_on.png');
+                                    break
+                            }
+                        }
+                    },
+                    error: function () {
+                        getPopularVideo();
+                    }
+                });
+            }, 1000);
+
 
         }
+
+        function getLatestVideo() {
+            $('#latestLoader').show();
+            $('#latestCarousel').hide();
+
+            setTimeout(() => {
+                $.ajax({
+                    url: 'https://smileschool-api.hbtn.info/latest-videos',
+                    type: 'GET',
+                    success: (data) => {
+    
+                        $('#latestLoader').hide();
+                        $('#latestCarousel').show();
+    
+                        for (let i = 0; i < 12; i++) {
+                            const element = data[i % data.length];
+                            const stars = element.star;
+    
+                            $(`.latestVideo${i + 1}, .latestTitle${i + 1}, .latestSub${i + 1}, .latestAuthor${i + 1}, .latestDuration${i + 1}, .latestProfile${i + 1}`).empty();
+    
+                            $(`.latestVideo${i + 1}`).attr('src', element.thumb_url);
+                            $(`.latestTitle${i + 1}`).append(element.title);
+                            $(`.latestAuthor${i + 1}`).append(element.author);
+                            $(`.latestDuration${i + 1}`).append(element.duration);
+                            $(`.latestProfile${i + 1}`).attr('src', element.author_pic_url);
+                            $(`.latestSub${i + 1}`).append(element['sub-title']);
+
+                            /* Same with popularRating only this one breaks the page if things are changed.
+                            Tried doing this in a for loop and it didn't turn out well.*/
+                            switch (stars) {
+                                case 1:
+                                    $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    break
+                                case 2:
+                                    $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    break
+                                case 3:
+                                    $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
+                                    break
+                                case 4:
+                                    $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
+                                    break
+                                case 5:
+                                    $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
+                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:nth-child(5)`).attr('src', 'images/star_on.png');
+                                    break
+                            }
+                        }
+                    },
+                    error: function() {
+                        getLatestVideo();
+                    }
+                });
+            }, 1000);
+        }
+
+        getQuotes();
+        getPopularVideo();
+        getLatestVideo();
+        
     }
 
     else if (page === 'page2') {
-        console.log('This is the Pricing page');
+        function getQuotes() {
+            setTimeout(() => {
 
-        $.ajax ({
-            url: 'https://smileschool-api.hbtn.info/quotes',
-            type: 'GET',
-            success: (data) => {
-
-                $('.carousel-name1, .singleQuote1, .singleTitle1').empty();
-                $('.carousel-name2, .singleQuote2, .singleTitle2').empty();
-                $('.carousel-name3, .singleQuote3, .singleTitle3').empty();
+                $('#quotesLoader').show();
+                $('#quotesCarousel').hide();
                 
-                for (let i = 0; i < 3; i++) {
-                    const quote = data[i] || data[0];
-                    $(`.profilePic${i + 1}`).attr('src', quote.pic_url);
-                    $(`.carousel-name${i + 1}`).append(quote.name);
-                    $(`.singleQuote${i + 1}`).append(quote.text);
-                    $(`.singleTitle${i + 1}`).append(quote.title);
-                }
-            }
-        });
+                $.ajax ({
+                    url: 'https://smileschool-api.hbtn.info/quotes',
+                    type: 'GET',
+                    success: (data) => {
+                        
+                        $('#quotesLoader').hide();
+                        $('#quotesCarousel').show();
+                        
+                        for (let i = 0; i < 3; i++) {
+                            const element = data[i] || data[0];
+                            
+                            $(`.carousel-name${i + 1}, .singleQuote${i + 1}, .singleTitle${i + 1}`).empty();
+                            
+                            $(`.profilePic${i + 1}`).attr('src', element.pic_url);
+                            $(`.carousel-name${i + 1}`).append(element.name);
+                            $(`.singleQuote${i + 1}`).append(element.text);
+                            $(`.singleTitle${i + 1}`).append(element.title);
+                        }
+                    },
+                    error: function() {
+                        getQuotes();
+                    }
+                });
+            }, 0);
+        }
+        getQuotes();
     }
 
     else if (page === 'page3') {
