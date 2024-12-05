@@ -159,36 +159,33 @@ $(document).ready(function() {
     }
 
     else if (page === 'page2') {
+        
         function getQuotes() {
-            setTimeout(() => {
 
-                $('#quotesLoader').show();
-                $('#quotesCarousel').hide();
-                
-                $.ajax ({
+            $('#pricingQuotesLoader').show();
+            $('.pricingQuotes').hide();
+
+            setTimeout(() => {
+                $.ajax({
                     url: 'https://smileschool-api.hbtn.info/quotes',
                     type: 'GET',
                     success: (data) => {
-                        
-                        $('#quotesLoader').hide();
-                        $('#quotesCarousel').show();
-                        
+                        $('#pricingQuotesLoader').hide();
+                        $('.pricingQuotes').show();
+
                         for (let i = 0; i < 3; i++) {
-                            const element = data[i] || data[0];
-                            
+                            const element = data[i % data.length];
+
                             $(`.carousel-name${i + 1}, .singleQuote${i + 1}, .singleTitle${i + 1}`).empty();
-                            
+
                             $(`.profilePic${i + 1}`).attr('src', element.pic_url);
                             $(`.carousel-name${i + 1}`).append(element.name);
                             $(`.singleQuote${i + 1}`).append(element.text);
                             $(`.singleTitle${i + 1}`).append(element.title);
                         }
-                    },
-                    error: function() {
-                        getQuotes();
                     }
-                });
-            }, 0);
+                })
+            }, 3000);
         }
         getQuotes();
     }
