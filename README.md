@@ -36,6 +36,12 @@ The designs were planned for Desktop, Tablet, and Mobile.
 
 The Holberton Smiling School web pages were developed by sections using the Bootstrap Front-End framework and CSS styles.
 
+## Pitfalls
+
+Some major pitfalls I fell into were trying to get slick CSS to work with an already preestablished Bootstrap Carousel.
+No Matter what I did I couldn't get it to work short from deleting the whole section from HTML and appending everything statically. 
+I spent 3 whole days trying to get it to work. 
+
 ## CSS File
 
 [Styles](https://github.com/jzamora5/holberton-smiling-school/blob/master/styles.css)

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     let page = $('body').data('page');
 
     if (page === 'page1') {
@@ -61,8 +62,7 @@ $(document).ready(function() {
                             $(`.subTitle${i + 1}`).append(element['sub-title']);
 
 
-                            /* There is probably a better way to dynamically set stars but this works and doesn't break the page.
-                            Tried using a for loop and it broke the page. */
+                            // Looks a bit better than what I originally had again there is probably a better way to handle this but this is what I concluded with.
                             switch (stars) {
                                 case 1:
                                     $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
@@ -70,29 +70,18 @@ $(document).ready(function() {
                                     break
                                 case 2:
                                     $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
-                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:first-child, #popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
                                     break
                                 case 3:
                                     $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
-                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:first-child, #popularRating${i + 1} > img:nth-child(2), #popularRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
                                     break
                                 case 4:
                                     $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
-                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img:first-child, #popularRating${i + 1} > img:nth-child(2), #popularRating${i + 1} > img:nth-child(3), #popularRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
                                     break
                                 case 5:
-                                    $(`#popularRating${i + 1} > img`).attr('src', 'images/star_off.png');
-                                    $(`#popularRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
-                                    $(`#popularRating${i + 1} > img:nth-child(5)`).attr('src', 'images/star_on.png');
+                                    $(`#popularRating${i + 1} > img`).attr('src', 'images/star_on.png');
                                     break
                             }
                         }
@@ -132,8 +121,7 @@ $(document).ready(function() {
                             $(`.latestProfile${i + 1}`).attr('src', element.author_pic_url);
                             $(`.latestSub${i + 1}`).append(element['sub-title']);
 
-                            /* Same with popularRating only this one breaks the page if things are changed.
-                            Tried doing this in a for loop and it didn't turn out well.*/
+                            // Cleaned it up and made it a bit cleaner again probably a better way to handle this
                             switch (stars) {
                                 case 1:
                                     $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
@@ -141,29 +129,18 @@ $(document).ready(function() {
                                     break
                                 case 2:
                                     $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
-                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:first-child, #latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
                                     break
                                 case 3:
                                     $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
-                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:first-child, #latestRating${i + 1} > img:nth-child(2), #latestRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
                                     break
                                 case 4:
                                     $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
-                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img:first-child, #latestRating${i + 1} > img:nth-child(2), #latestRating${i + 1} > img:nth-child(3), #latestRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
                                     break
                                 case 5:
-                                    $(`#latestRating${i + 1} > img`).attr('src', 'images/star_off.png');
-                                    $(`#latestRating${i + 1} > img:first-child`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(2)`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(3)`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(4)`).attr('src', 'images/star_on.png');
-                                    $(`#latestRating${i + 1} > img:nth-child(5)`).attr('src', 'images/star_on.png');
+                                    $(`#latestRating${i + 1} > img`).attr('src', 'images/star_on.png');
                                     break
                             }
                         }
